@@ -15,16 +15,10 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="mailto:contact@example.com"
+                href="#contact"
                 className="rounded-full bg-black px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
               >
-                邮件咨询
-              </a>
-              <a
-                href="#contact"
-                className="rounded-full border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-900 transition hover:border-black hover:text-black dark:border-zinc-700 dark:text-zinc-100 dark:hover:border-white dark:hover:text-white"
-              >
-                QQ / 微信
+                QQ / 微信咨询
               </a>
               <a
                 href="#projects"
@@ -156,7 +150,7 @@ export default function Home() {
           </ol>
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="mailto:contact@example.com"
+              href="#contact"
               className="rounded-full bg-black px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
             >
               立即预约沟通
@@ -175,29 +169,16 @@ export default function Home() {
             <h2 className="text-xl font-semibold">咨询与联系方式</h2>
             <span className="text-sm text-zinc-500">工作日 10:00 - 19:00</span>
           </div>
-          <div className="grid gap-3 text-sm text-zinc-700 dark:text-zinc-300 sm:grid-cols-2">
-            <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-900/60">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
-                邮件
-              </p>
-              <a
-                className="mt-2 block font-medium text-zinc-900 underline-offset-4 hover:underline dark:text-zinc-100"
-                href="mailto:contact@example.com"
-              >
-                contact@example.com
-              </a>
-            </div>
-            <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-900/60">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
-                QQ / 微信
-              </p>
-              <p className="mt-2 font-medium text-zinc-900 dark:text-zinc-100">
-                QQ：2726087639
-              </p>
-              <p className="font-medium text-zinc-900 dark:text-zinc-100">
-                微信：chopin1000
-              </p>
-            </div>
+          <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-900/60">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
+              QQ / 微信
+            </p>
+            <p className="mt-2 font-medium text-zinc-900 dark:text-zinc-100">
+              QQ：2726087639
+            </p>
+            <p className="font-medium text-zinc-900 dark:text-zinc-100">
+              微信：chopin1000
+            </p>
           </div>
         </section>
       </main>
