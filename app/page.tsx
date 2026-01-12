@@ -2,6 +2,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0b1220] via-[#0c1628] to-[#0c0f1a] text-zinc-50 antialiased">
       <main className="mx-auto flex max-w-6xl flex-col gap-16 px-6 py-16 sm:px-10 lg:px-16">
+        {/* Hero Section */}
         <section className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <div className="space-y-6">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-200">
@@ -17,22 +18,22 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap items-center gap-3">
               <a
-                href="#contact"
+                href="#pricing"
                 className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black shadow-sm transition hover:bg-zinc-200"
               >
-                QQ / 微信咨询
+                查看价格
               </a>
               <a
-                href="#projects"
+                href="#contact"
                 className="rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:text-white"
               >
-                查看项目清单
+                QQ / 微信咨询
               </a>
             </div>
             <div className="grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 sm:grid-cols-3">
               {[
                 { label: "交付方式", value: "源码 + 文档 + 培训" },
-                { label: "学习周期", value: "7-14 天快速上手" },
+                { label: "课程周期", value: "7-14 天快速上手" },
                 { label: "服务支持", value: "技术答疑 · 部署指导" },
               ].map((item) => (
                 <div key={item.label} className="space-y-1">
@@ -59,18 +60,11 @@ export default function Home() {
                 <li>· 部署指南 + 环境配置说明</li>
                 <li>· 7-14 天培训支持（线上/线下）</li>
               </ul>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">
-                  适用场景
-                </p>
-                <p className="mt-2 text-sm text-zinc-100">
-                  跨境出入金、资产托管与多签审批、收益分发、AI 解析与报告生成、实时风控与合规模块。
-                </p>
-              </div>
             </div>
           </div>
         </section>
 
+        {/* 产品列表 */}
         <section id="projects" className="space-y-6">
           <div className="flex items-center justify-between gap-3">
             <h2 className="text-xl font-semibold text-white">现成产品</h2>
@@ -140,9 +134,10 @@ export default function Home() {
           </div>
         </section>
 
+        {/* 课程周期 */}
         <section className="grid gap-6 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
           <div className="flex items-center justify-between gap-3">
-            <h2 className="text-xl font-semibold text-white">学习周期</h2>
+            <h2 className="text-xl font-semibold text-white">课程周期</h2>
             <span className="text-sm text-zinc-400">快速上手 · 7-14 天</span>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -166,6 +161,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* 适合人群 */}
         <section className="grid gap-6 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
           <div className="flex items-center justify-between gap-3">
             <h2 className="text-xl font-semibold text-white">适合人群</h2>
@@ -218,42 +214,194 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
+        {/* 价格和支付方式 */}
+        <section id="pricing" className="grid gap-6 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
           <div className="flex items-center justify-between gap-3">
-            <h2 className="text-xl font-semibold text-white">购买流程</h2>
-            <span className="text-sm text-zinc-400">简单快捷 · 快速交付</span>
+            <h2 className="text-xl font-semibold text-white">价格方案</h2>
+            <span className="text-sm text-zinc-400">灵活选择 · 按需付费</span>
           </div>
-          <ol className="grid gap-3 text-sm text-zinc-200 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "01 咨询沟通", desc: "了解需求、确认产品版本、确定交付方式。" },
-              { title: "02 签订合同", desc: "签署协议、支付款项、准备交付环境。" },
-              { title: "03 源码交付", desc: "交付完整源码、技术文档、部署指南。" },
-              { title: "04 培训支持", desc: "线上/线下培训、技术答疑、部署指导。" },
-            ].map((step) => (
-              <li
-                key={step.title}
-                className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur"
+              {
+                name: "基础版",
+                price: "面议",
+                desc: "单个产品源码 + 基础培训",
+                features: [
+                  "完整前后端源码",
+                  "技术文档 + API 文档",
+                  "7 天线上培训",
+                  "30 天技术支持",
+                ],
+                highlight: false,
+              },
+              {
+                name: "标准版",
+                price: "面议",
+                desc: "多个产品组合 + 深度培训",
+                features: [
+                  "2-3 个产品源码",
+                  "完整技术文档",
+                  "14 天培训（线上/线下）",
+                  "60 天技术支持",
+                  "部署指导 + 二次开发支持",
+                ],
+                highlight: true,
+              },
+              {
+                name: "企业版",
+                price: "面议",
+                desc: "全产品套件 + 定制化服务",
+                features: [
+                  "全部产品源码",
+                  "私有化部署支持",
+                  "14 天培训 + 定制化培训",
+                  "90 天技术支持",
+                  "专属技术顾问",
+                  "内推服务",
+                ],
+                highlight: false,
+              },
+            ].map((plan) => (
+              <div
+                key={plan.name}
+                className={`relative overflow-hidden rounded-2xl border p-6 shadow-lg transition hover:-translate-y-1 ${
+                  plan.highlight
+                    ? "border-emerald-500/50 bg-gradient-to-br from-emerald-500/10 to-white/5"
+                    : "border-white/10 bg-white/5"
+                }`}
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
-                  {step.title}
-                </p>
-                <p className="mt-2 leading-6 text-zinc-100">{step.desc}</p>
-              </li>
+                {plan.highlight && (
+                  <div className="absolute right-4 top-4 rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-200">
+                    推荐
+                  </div>
+                )}
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold text-white">{plan.name}</h3>
+                  <div className="mt-2 flex items-baseline gap-2">
+                    <span className="text-3xl font-bold text-white">{plan.price}</span>
+                  </div>
+                  <p className="mt-2 text-sm text-zinc-300">{plan.desc}</p>
+                </div>
+                <ul className="space-y-3">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-zinc-200">
+                      <span className="mt-1 text-emerald-200">✓</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#contact"
+                  className={`mt-6 block w-full rounded-full px-5 py-3 text-center text-sm font-semibold transition ${
+                    plan.highlight
+                      ? "bg-white text-black hover:bg-zinc-200"
+                      : "border border-white/30 bg-white/5 text-white hover:border-white hover:bg-white/10"
+                  }`}
+                >
+                  立即咨询
+                </a>
+              </div>
             ))}
-          </ol>
-          <div className="flex flex-wrap items-center gap-3">
-            <a
-              href="#contact"
-              className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black shadow-sm transition hover:bg-zinc-200"
-            >
-              立即咨询购买
-            </a>
-            <span className="text-sm text-zinc-300">
-              源码交付 · 7-14 天培训 · 技术支持
-            </span>
+          </div>
+          <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-6">
+            <h3 className="mb-4 text-lg font-semibold text-white">支付方式</h3>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { name: "银行转账", desc: "对公账户，支持企业付款" },
+                { name: "支付宝", desc: "个人/企业账户均可" },
+                { name: "微信支付", desc: "个人/企业账户均可" },
+                { name: "USDT", desc: "加密货币支付（TRC20/ERC20）" },
+              ].map((method) => (
+                <div
+                  key={method.name}
+                  className="rounded-xl border border-white/10 bg-white/5 p-4"
+                >
+                  <p className="font-semibold text-white">{method.name}</p>
+                  <p className="mt-1 text-xs text-zinc-400">{method.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-sm text-zinc-300">
+              💡 支付方式灵活，支持分期付款。具体支付方式请在咨询时确认。
+            </p>
           </div>
         </section>
 
+        {/* 内推服务 */}
+        <section className="grid gap-6 rounded-2xl border border-white/10 bg-gradient-to-br from-emerald-500/10 via-white/5 to-white/0 p-6 shadow-lg">
+          <div className="flex items-center justify-between gap-3">
+            <h2 className="text-xl font-semibold text-white">内推服务</h2>
+            <span className="text-sm text-zinc-400">企业版专享</span>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="space-y-4">
+              <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                <h3 className="mb-3 text-lg font-semibold text-white">什么是内推？</h3>
+                <p className="text-sm leading-6 text-zinc-200">
+                  内推是指通过我们的渠道，将您的项目或产品推荐给潜在客户、合作伙伴或投资方。我们拥有丰富的行业资源和网络，可以帮助您快速对接目标客户。
+                </p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                <h3 className="mb-3 text-lg font-semibold text-white">内推包含什么？</h3>
+                <ul className="space-y-2 text-sm text-zinc-200">
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-200">•</span>
+                    <span>精准客户推荐（根据您的业务需求匹配）</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-200">•</span>
+                    <span>合作伙伴对接（支付通道、技术服务商等）</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-200">•</span>
+                    <span>投资方引荐（如有融资需求）</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-200">•</span>
+                    <span>行业资源对接（合规咨询、技术支持等）</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+                <h3 className="mb-3 text-lg font-semibold text-white">适合谁？</h3>
+                <ul className="space-y-2 text-sm text-zinc-200">
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-200">•</span>
+                    <span>需要快速拓展客户的企业</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-200">•</span>
+                    <span>希望对接行业资源的创业者</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-200">•</span>
+                    <span>需要寻找合作伙伴的项目方</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-200">•</span>
+                    <span>有融资需求的初创公司</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
+                <h3 className="mb-2 text-lg font-semibold text-emerald-200">如何获得内推服务？</h3>
+                <p className="text-sm text-zinc-200">
+                  内推服务是企业版专享服务。购买企业版后，我们会根据您的业务需求，提供精准的客户推荐和资源对接服务。
+                </p>
+                <a
+                  href="#contact"
+                  className="mt-4 inline-block rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition hover:bg-zinc-200"
+                >
+                  咨询企业版
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 联系方式 */}
         <section
           id="contact"
           className="grid gap-4 rounded-2xl border border-white/10 bg-gradient-to-br from-emerald-500/10 via-white/5 to-white/0 p-6 shadow-xl"
