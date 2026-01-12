@@ -1,0 +1,10 @@
+# Cloudflare Pages 静态资源部署配置
+# 这个文件告诉 wrangler 部署 out 目录中的静态文件
+
+name = "my-site"
+compatibility_date = "2024-01-01"
+
+# 配置静态资源目录（用于 Cloudflare Pages）
+[assets]
+directory = "./out"
+
