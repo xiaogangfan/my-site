@@ -1,53 +1,80 @@
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900 antialiased dark:bg-black dark:text-zinc-50">
+    <div className="min-h-screen bg-gradient-to-b from-[#0b1220] via-[#0c1628] to-[#0c0f1a] text-zinc-50 antialiased">
       <main className="mx-auto flex max-w-6xl flex-col gap-16 px-6 py-16 sm:px-10 lg:px-16">
-        <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <section className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <div className="space-y-6">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-200">
               项目展示 · 定制咨询
-            </p>
-            <h1 className="text-3xl font-semibold leading-tight sm:text-4xl">
-              法币出入金 · 区块链 · 理财 · AI 面相解析
-            </h1>
-            <p className="text-lg text-zinc-600 dark:text-zinc-400">
-              提供从方案设计、产品落地到合规咨询的端到端能力，涵盖跨境法币出入金、链上资产管理、理财收益分发、以及基于 AI 的面相解析解决方案。
-            </p>
-            <div className="flex flex-wrap gap-3">
+            </span>
+            <div className="space-y-4">
+              <h1 className="text-3xl font-semibold leading-tight sm:text-4xl">
+                法币出入金 · 区块链 · 理财 · AI 面相解析
+              </h1>
+              <p className="text-lg text-zinc-200/90">
+                提供从方案设计、产品落地到合规咨询的端到端能力，涵盖跨境法币出入金、链上资产管理、理财收益分发、以及基于 AI 的面相解析解决方案。
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
               <a
                 href="#contact"
-                className="rounded-full bg-black px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+                className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black shadow-sm transition hover:bg-zinc-200"
               >
                 QQ / 微信咨询
               </a>
               <a
                 href="#projects"
-                className="rounded-full border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-900 transition hover:border-black hover:text-black dark:border-zinc-700 dark:text-zinc-100 dark:hover:border-white dark:hover:text-white"
+                className="rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:text-white"
               >
                 查看项目清单
               </a>
             </div>
-          </div>
-          <div className="grid gap-4 rounded-2xl border border-zinc-200 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-zinc-900/60">
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-zinc-500">交付模型</span>
-              <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-200">
-                可选 SaaS / 私有化
-              </span>
+            <div className="grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 sm:grid-cols-3">
+              {[
+                { label: "交付模式", value: "SaaS / 私有化" },
+                { label: "重点能力", value: "合规 · 风控 · 数据" },
+                { label: "服务支持", value: "需求梳理 · 迭代运维" },
+              ].map((item) => (
+                <div key={item.label} className="space-y-1">
+                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">
+                    {item.label}
+                  </p>
+                  <p className="text-sm font-semibold text-white">{item.value}</p>
+                </div>
+              ))}
             </div>
-            <ul className="grid gap-3 text-sm text-zinc-700 dark:text-zinc-300">
-              <li>· 顾问式需求梳理 & 合规提示</li>
-              <li>· 原型/交互设计 + UI 交付</li>
-              <li>· 前后端研发、上云与监控</li>
-              <li>· 运维 SLA、迭代优化</li>
-            </ul>
+          </div>
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.25),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(16,185,129,0.25),transparent_30%)]" />
+            <div className="relative grid gap-4 text-sm text-zinc-100">
+              <div className="flex items-center justify-between">
+                <span className="text-zinc-300">交付清单</span>
+                <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-200">
+                  可选 SaaS / 私有化
+                </span>
+              </div>
+              <ul className="grid gap-2 leading-6 text-zinc-200">
+                <li>· 顾问式需求梳理 & 合规提示</li>
+                <li>· 原型 / 交互设计 + UI 交付</li>
+                <li>· 前后端研发、上云与监控</li>
+                <li>· 运维 SLA、迭代优化与数据支持</li>
+              </ul>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">
+                  场景示例
+                </p>
+                <p className="mt-2 text-sm text-zinc-100">
+                  跨境出入金、资产托管与多签审批、收益分发、AI 解析与报告生成、实时风控与合规模块。
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
         <section id="projects" className="space-y-6">
           <div className="flex items-center justify-between gap-3">
-            <h2 className="text-xl font-semibold">核心项目</h2>
-            <span className="text-sm text-zinc-500">可定制 / 可集成</span>
+            <h2 className="text-xl font-semibold text-white">核心项目</h2>
+            <span className="text-sm text-zinc-400">可定制 / 可集成</span>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {[
@@ -84,12 +111,16 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col gap-4 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900"
+                className="relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg transition hover:-translate-y-1 hover:shadow-2xl"
               >
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-emerald-500/5" />
                 <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <h3 className="text-lg font-semibold">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                  <div className="space-y-2">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-emerald-200">
+                      可定制
+                    </div>
+                    <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                    <p className="text-sm leading-6 text-zinc-200">
                       {item.desc}
                     </p>
                   </div>
@@ -98,7 +129,7 @@ export default function Home() {
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-200"
+                      className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-zinc-100"
                     >
                       {tag}
                     </span>
@@ -109,53 +140,37 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid gap-4 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+        <section className="grid gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg">
           <div className="flex items-center justify-between gap-3">
-            <h2 className="text-xl font-semibold">合作流程</h2>
-            <span className="text-sm text-zinc-500">按需定制 · 快速上线</span>
+            <h2 className="text-xl font-semibold text-white">合作流程</h2>
+            <span className="text-sm text-zinc-400">按需定制 · 快速上线</span>
           </div>
-          <ol className="grid gap-3 text-sm text-zinc-700 dark:text-zinc-300 sm:grid-cols-2 lg:grid-cols-4">
-            <li className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-900/60">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
-                01 需求沟通
-              </p>
-              <p className="mt-2 leading-6">
-                场景梳理、合规与风控提醒，确定交付边界与里程碑。
-              </p>
-            </li>
-            <li className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-900/60">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
-                02 原型设计
-              </p>
-              <p className="mt-2 leading-6">
-                交互原型与 UI 设计评审，锁定范围与体验。
-              </p>
-            </li>
-            <li className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-900/60">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
-                03 研发交付
-              </p>
-              <p className="mt-2 leading-6">
-                前后端联调、测试验证、性能与安全加固。
-              </p>
-            </li>
-            <li className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-900/60">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
-                04 上线运营
-              </p>
-              <p className="mt-2 leading-6">
-                部署上线、监控告警、持续迭代与数据运营支持。
-              </p>
-            </li>
+          <ol className="grid gap-3 text-sm text-zinc-200 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: "01 需求沟通", desc: "场景梳理、合规与风控提醒，确定交付边界与里程碑。" },
+              { title: "02 原型设计", desc: "交互原型与 UI 设计评审，锁定范围与体验。" },
+              { title: "03 研发交付", desc: "前后端联调、测试验证、性能与安全加固。" },
+              { title: "04 上线运营", desc: "部署上线、监控告警、持续迭代与数据运营支持。" },
+            ].map((step) => (
+              <li
+                key={step.title}
+                className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-400">
+                  {step.title}
+                </p>
+                <p className="mt-2 leading-6 text-zinc-100">{step.desc}</p>
+              </li>
+            ))}
           </ol>
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="#contact"
-              className="rounded-full bg-black px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+              className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black shadow-sm transition hover:bg-zinc-200"
             >
               立即预约沟通
             </a>
-            <span className="text-sm text-zinc-500 dark:text-zinc-400">
+            <span className="text-sm text-zinc-300">
               支持 SaaS / 私有化交付 · 提供合规与风控建议
             </span>
           </div>
@@ -163,20 +178,20 @@ export default function Home() {
 
         <section
           id="contact"
-          className="grid gap-4 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+          className="grid gap-4 rounded-2xl border border-white/10 bg-gradient-to-br from-emerald-500/10 via-white/5 to-white/0 p-6 shadow-xl"
         >
           <div className="flex items-center justify-between gap-3">
-            <h2 className="text-xl font-semibold">咨询与联系方式</h2>
-            <span className="text-sm text-zinc-500">工作日 10:00 - 19:00</span>
+            <h2 className="text-xl font-semibold text-white">咨询与联系方式</h2>
+            <span className="text-sm text-zinc-300">工作日 10:00 - 19:00</span>
           </div>
-          <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-900/60">
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-zinc-300">
               QQ / 微信
             </p>
-            <p className="mt-2 font-medium text-zinc-900 dark:text-zinc-100">
+            <p className="mt-2 font-semibold text-white">
               QQ：2726087639
             </p>
-            <p className="font-medium text-zinc-900 dark:text-zinc-100">
+            <p className="font-semibold text-white">
               微信：chopin1000
             </p>
           </div>
