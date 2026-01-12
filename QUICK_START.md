@@ -44,6 +44,9 @@ git push -u origin main
 | **Build command** | `npm run build` |
 | **Build output directory** | `out` ⚠️ 重要！ |
 | **Root directory** | `/`（保持默认） |
+| **Deploy command** | ⚠️ **留空，不要填写！** |
+
+**⚠️ 重要提示**：`Deploy command` 字段必须留空，不要填写任何内容（包括 `npx wrangler deploy`）。静态网站不需要部署命令，Cloudflare Pages 会自动部署 `out` 目录中的文件。
 
 ### 5. 环境变量（可选）
 - 如果项目不需要环境变量，可以跳过
